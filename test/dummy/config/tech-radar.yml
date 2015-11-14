@@ -1,0 +1,114 @@
+"Tools":
+  "Adopt":
+    Resque:
+      purpose: "Background Jobs"
+      what_url: https://github.com/resque/resque/tree/1-x-stable
+      why_url: :needed 
+    RabbitMQ:
+      purpose: "Messaging"
+      why_url: :needed 
+  "Trial":
+    ElasticSearch:
+      purpose: "Indexed Search"
+      what_url:
+      why_url: :needed 
+      notes: "Erch and CXE using"
+    HumbleKit:
+      purpose: "CSS Framework"
+      what_url: http://humblekit.com
+      why_url: :needed 
+      notes: "Used in many apps, not consistently"
+  "Assess":
+    Sidekiq:
+      purpose: "Background Jobs"
+      what_url:
+      why_url: :needed 
+      notes: "Only Erch using"
+    "Redis as a database":
+      purpose: "Primary Data Store"
+      what_url: https://redis.io
+      why_url: :needed 
+      notes: "Only client-service using"
+  "Hold":
+    SwiftTask:
+      purpose: "Promise Pattern in Swift"
+      what_url: https://github.com/ReactKit/SwiftTask
+      why_url: :needed 
+      notes: "We had trouble designing a system around this and switched to PromiseKit"
+    JIRA:
+      purpose: "Issue & Task Management"
+      what_url: https://www.atlassian.com/software/jira/
+      why_url: :needed 
+      notes: "Abandoned for lighterweight solutions"
+"Platforms":
+  "Adopt":
+    Heroku:
+      purpose: "Infrastructure"
+      what_url:
+      why_url: :needed 
+  "Trial":
+    iOS:
+      purpose: "Mobile Application Development"
+      what_url: https://en.wikipedia.org/wiki/IOS
+      why_url: :needed 
+      notes: "Only used for client-facing mobile app"
+  "Assess":
+    AWS:
+      purpose: "Infrastructure"
+      what_url: https://aws.amazon.com
+      why_url: :needed 
+      notes: "VPN"
+  "Hold":
+    Cloudfront:
+      purpose: "Product image hosting"
+      what_url: https://aws.amazon.com/cloudfront/
+      why_url: :needed 
+      notes: "Minx using, backed  by Cloudinary"
+"Techniques":
+  "Adopt":
+    "Weekly sync-ups with Business Partners":
+      purpose: "Roadmap Planning"
+      what_url: :needed
+      why_url: :needed 
+  "Trial":
+    "HTTP Services":
+      purpose: "Application Integration"
+      what_url: :needed
+      why_url: :needed 
+      notes: "Probably ready to adopt.  Some older code still using gems & messages-as-APIs"
+  "Assess":
+    "Consumer-driven tests for services":
+      purpose: "Ensure changes to services do not break upstream clients"
+      what_url: http://martinfowler.com/articles/consumerDrivenContracts.html
+      why_url: :needed 
+      notes: "MOPS experimenting (see Pact)"
+  "Hold":
+    "Shared Gems":
+      purpose: "Application Integration"
+      what_url: :needed
+      why_url: :needed 
+      notes: "Difficult to manage, doesn't scale"
+"Languages and Frameworks":
+  "Adopt":
+    Ruby:
+      purpose: Middleware Programming
+      what_url: https://www.ruby-lang.org/en/
+      why_url: :needed 
+  "Trial":
+    CoffeeScript:
+      purpose: Browser Programming
+      what_url:
+      why_url: :needed 
+      notes: "Most apps are using this, with Minx being a notable exception"
+  "Assess":
+    JQuery:
+      purpose: "Front-end Framework"
+      what_url:
+      why_url: :needed 
+      notes: "www, Kingmob use this for front-end"
+  "Hold":
+    "Objective-C":
+      purpose: "iOS Development"
+      what_url: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html
+      why_url: :needed 
+      notes: "We have seen much lower error rates in production using Swift than the devs have seen with similar apps written in Objective-C"

@@ -18,4 +18,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.2.5"
+  s.add_dependency "i18n"
+  s.add_dependency "immutable-struct"
+
+  s.add_development_dependency "mocha"
 end

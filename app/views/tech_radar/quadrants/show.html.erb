@@ -1,0 +1,12 @@
+<ul>
+  <% @quadrant.rings.each do |ring| %>
+    <li>
+      <%= ring.name %>
+      <ul>
+        <% ring.technologies.each do |technology| %>
+          <li><%= technology.name %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>

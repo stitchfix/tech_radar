@@ -1,0 +1,6 @@
+en:
+  hello: "Hello world"
+  tech_radar:
+    radar:
+      index:
+        preamble: "This represents the current thinking about what technologies should be used for various purposes. It's a guide for making technical decisions without having to have the entire team sync up on everything. It also allows you to experiment with new technologies safely by seeing what others have discovered, or not."
