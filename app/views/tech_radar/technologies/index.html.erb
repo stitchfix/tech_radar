@@ -1,6 +1,23 @@
-<h1>All</h1>
-<ul>
-  <% @technologies.each do |technology| %>
-    <li><%= technology.name %></li>
+<h1 class="h2">A-Z</h1>
+<nav class="pagination">
+  <% ('A'..'Z').each do |letter| %>
+    <li><a href="#<%= letter %>"><%= letter %></a></li>
   <% end %>
-</ul>
+</nav>
+<% @technologies.group_by { |technology| technology.name[0].upcase }.each do |letter,technologies| %>
+  <a name="<%= letter %>"></a>
+  <h2 class="h3"><%= letter %></h2>
+  <% technologies.each do |technology| %>
+    <ul class="list-unstyled">
+      <li>
+        <h1 class="h4">
+          <%= link_to technology.name, technology_path(technology.name) %>
+          <small>
+            <%= technology.purpose %>
+            <span class="label label-<%= label_color_for_ring(technology.ring) %>"><%= technology.ring %></span>
+          </small>
+        </h1>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

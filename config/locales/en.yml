@@ -2,5 +2,57 @@ en:
   hello: "Hello world"
   tech_radar:
     radar:
+      title: "Technology Radar"
+      rings:
+        name: "Rings"
+        "Adopt":
+          title: "Adopt"
+          summary: "Use these, as they are supported and proven in production"
+          description: "Technologies here are what we are using consistency across most, if not all, projects & teams. In general, you should use these unless you have a <strong>very</strong> good reason not to. <strong>Not</strong> using technologies here would be a technical risk."
+        "Trial": 
+          summary: "Consider this if nothing in <em>Adopt</em> works"
+          title: "Trial"
+          description: "Technologies in production now, but not consistently across the team. These are worth pursuing, but we haven't yet rolled them out team-wide. They are great choices for projects where a solution doesn't exist in the <em>Adopt</em> ring. Prefer these over those in <em>Assess</em>."
+        "Assess": 
+          title: "Assess"
+          summary: "Not ready for heavy-duty use or not widely used."
+          description: "This Indicates that a technology is worth exploring with the goal of understanding how it will affect us. It may be worth investing effort like development spikes or research projects to see if it will have a positive impact on us."
+        "Hold": 
+          title: "Hold"
+          summary: "Don't start new work with these."
+          description: "Don't start new work with these technologies. They are too new to be evaluated, being discontinued, or have been found to be unsuitable."
+      technologies:
+        more_details_url:
+          google: "Information from Google…"
+          link: "More Information…"
+        why_summary:
+          link: "Detailed explanation…"
+          why_url_only: "But, there is a link to a detailed explanation…"
+          no_summary: "There is no summary of why this technology is here.  Please provide a <tt>why_summary</tt> in <tt>config/tech-radar.yml</tt>."
+      quadrants:
+        name: "Quadrants"
+        "Techniques":
+          title: "Techniques"
+          description: "Elements of a software development process, such as experience design; and ways of structuring software, such as micro-services."
+        "Languages and Frameworks":
+          title: "Languages and Frameworks"
+          description: "Programming languages and frameworks (but not code libraries, which are considered Tools)"
+        "Tools":
+          title: "Tools"
+          description: "Components, such as databases, software development tools, such as versions control systems; or more generic categories of tools, such as the notion of polyglot persistence."
+        "Platforms":
+          title: "Platforms"
+          description: "Things that we build software on top of: mobile technologies like iOS, platforms-as-a-service like Heroku, or runtime containers like the JVM."
       index:
         preamble: "This represents the current thinking about what technologies should be used for various purposes. It's a guide for making technical decisions without having to have the entire team sync up on everything. It also allows you to experiment with new technologies safely by seeing what others have discovered, or not."
+        summary_link: "View Summary…"
+        all_list_link: "Technologies A–Z…"
+        changing:
+          title: "How the Radar Changes"
+          preamble: "When using the radar, you may be tempted to suggest changes to it. You shouldn't. The radar is changed on a regular basis based on experience found since the last update. Try to stick to the radar for your day-to-day work, and keep notes on how things go. We want the radar to be generally stable, but able to evolve."
+        howto:
+          title: "How to Use This Radar"
+          rings:
+            preamble: "The Rings are indicators of how fit a technology or technique is for use, and these should be your guide when making technical decisions."
+          quadrants:
+            preamble: "Quadrants serve to partition the radar into logical groupings to make it more navigable and manageable."

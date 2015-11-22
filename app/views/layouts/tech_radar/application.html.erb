@@ -3,12 +3,19 @@
 <head>
   <title>TechRadar</title>
   <%= stylesheet_link_tag    "tech_radar/application", media: "all" %>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js">
+  </script>
   <%= javascript_include_tag "tech_radar/application" %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 </head>
 <body>
-
-<%= yield %>
-
+  <section class="container">
+    <% unless @hide_nav %>
+      <h1><%= link_to t("tech_radar.radar.title").html_safe, radar_index_path %></h1>
+      <hr>
+    <% end %>
+    <%= yield %>
+  </section>
 </body>
 </html>

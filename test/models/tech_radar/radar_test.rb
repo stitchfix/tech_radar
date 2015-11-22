@@ -44,9 +44,14 @@ module TechRadar
     test "technology" do
       technology = @radar.technology("Ruby")
       assert_equal "Ruby"                          , technology.name
-      assert_equal "https://www.ruby-lang.org/en/" , technology.what_url.url
+      assert_equal "https://www.ruby-lang.org/en/" , technology.more_details_url.url
       assert_equal nil                             , technology.why_url.url
       assert_equal "Middleware Programming"        , technology.purpose
+    end
+
+    test "rings" do
+      assert_equal ["Adopt","Trial","Assess","Hold"],@radar.rings.map(&:name)
+      assert_equal [ "Heroku", "RabbitMQ", "Resque", "Ruby", "Weekly sync-ups with Business Partners",],@radar.rings.detect { |ring| ring.name == "Adopt" }.technologies.map(&:name)
     end
 
   end

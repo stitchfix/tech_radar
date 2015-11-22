@@ -1,1 +1,43 @@
-<h1><%= @technology.name %></h1>
+<section>
+  <h1>
+    <%= @technology.name %>
+    <small>
+      <%= t("tech_radar.radar.quadrants.#{@technology.quadrant}.title") %>
+      <span class="label label-<%= label_color_for_ring(@technology.ring) %>"><%= t("tech_radar.radar.rings.#{@technology.ring}.title") %></span>
+    </small>
+  </h1>
+  <p class="lead"><%= @technology.purpose %></p>
+  <section>
+    <% if @technology.more_details_url.blank? %>
+      <p>
+        <%= link_to t("tech_radar.radar.technologies.more_details_url.google"), "https://www.google.com/search?q=#{@technology.name}", class: "btn btn-default" %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to t("tech_radar.radar.technologies.more_details_url.link"), @technology.more_details_url, class: "btn btn-default" %>
+      </p>
+    <% end %>
+  </section>
+  <section>
+    <hr>
+    <% if @technology.why_summary.present? %>
+      <p>
+        <span class="text-muted">
+          <%= @technology.why_summary %>
+        </span>
+        <% if @technology.why_url.present? %>
+          <%= link_to t("tech_radar.radar.technologies.why_summary.link"), @technology.why_url %>
+        <% end %>
+      </p>
+    <% else %>
+      <% if TechRadar.warn_on_missing_why_summary[@technology.ring] %>
+        <div class="alert alert-warning">
+          <%= t("tech_radar.radar.technologies.why_summary.no_summary").html_safe %>
+          <% if @technology.why_url.present? %>
+            <%= link_to t("tech_radar.radar.technologies.why_summary.url_only"), @technology.why_url %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+</section>

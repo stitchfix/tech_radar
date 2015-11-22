@@ -1,17 +1,15 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-# Maintain your gem's version:
 require "tech_radar/version"
 
-# Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "tech_radar"
   s.version     = TechRadar::VERSION
-  s.authors     = ["Dave Copeland"]
-  s.email       = ["davetron5000@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of TechRadar."
-  s.description = "TODO: Description of TechRadar."
+  s.authors     = ["Stitch Fix Engineering", "Dave Copeland"]
+  s.email       = ["eng@stitchfix.com", "davetron5000@gmail.com"]
+  s.homepage    = "http://opensource.stitchfix.com"
+  s.summary     = "Rails engine to create and manage your own team's Technology Radar"
+  s.description = "Rails engine to create and manage your own team's Technology Radar"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]

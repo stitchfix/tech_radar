@@ -1,3 +1,47 @@
-<p>
-  <%= t("tech_radar.radar.index.preamble") %>
-</p>
+<section>
+  <div class="row">
+    <div class="col-md-2">&nbsp;</div>
+    <div class="col-md-8">
+      <header>
+        <h1><%= t("tech_radar.radar.title") %></h1>
+      </header>
+      <p class="lead">
+        <%= t("tech_radar.radar.index.preamble") %>
+      </p>
+      <%= link_to t("tech_radar.radar.index.summary_link"), radar_summary_path, class: "btn btn-primary" %>
+      <%= link_to t("tech_radar.radar.index.all_list_link"), technologies_path, class: "btn btn-default" %>
+      <section>
+        <h1 class="h2"><%= t("tech_radar.radar.index.howto.title") %></h1>
+        <h2 class="h3"><%= t("tech_radar.radar.rings.name") %></h1>
+        <p><%= t("tech_radar.radar.index.howto.rings.preamble") %></p>
+        <% @radar.rings.each_slice(2) do |rings| %>
+          <div class="row">
+            <% rings.each do |ring| %>
+              <div class="col-md-6">
+                <h3 class="h4"><%= link_to t("tech_radar.radar.rings.#{ring.name}.title"), ring_path(ring.name) %></h3>
+                <p class="text-muted"><%= t("tech_radar.radar.rings.#{ring.name}.description").html_safe %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <h2 class="h3"><%= t("tech_radar.radar.quadrants.name") %></h1>
+        <p><%= t("tech_radar.radar.index.howto.quadrants.preamble") %></p>
+        <% @radar.quadrants.each_slice(2) do |quadrants| %>
+          <div class="row">
+            <% quadrants.each do |quadrant| %>
+              <div class="col-md-6">
+                <h3 class="h4"><%= link_to t("tech_radar.radar.quadrants.#{quadrant.name}.title"), quadrant_path(quadrant.name) %></h3>
+                <p class="text-muted"><%= t("tech_radar.radar.quadrants.#{quadrant.name}.description").html_safe %></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </section>
+      <section>
+      </section>
+        <h1 class="h2"><%= t("tech_radar.radar.index.changing.title") %></h1>
+        <p><%= t("tech_radar.radar.index.changing.preamble") %></p>
+      </section>
+    </div>
+    <div class="col-md-2">&nbsp;</div>
+</section>

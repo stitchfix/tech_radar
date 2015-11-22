@@ -1,0 +1,30 @@
+<section>
+  <nav>
+    <ul class="nav nav-pills">
+      <% @all_ring_names.each do |ring_name| %>
+        <li role="presentation" class="<%= ring_name == @ring.name ? 'active' : '' %>"><%= link_to t("tech_radar.radar.rings.#{ring_name}.title"), ring_path(ring_name) %></li>
+      <% end %>
+    </ul>
+  </nav>
+  <hr>
+  <h2 class="sr-only"><%= t("tech_radar.radar.rings.#{@ring.name}.title").html_safe %></h2>
+  <p class="lead"><%= t("tech_radar.radar.rings.#{@ring.name}.description").html_safe %></p>
+  <ul class="list-unstyled">
+    <% @ring.technologies.each do |technology| %>
+      <li>
+        <p class="h4">
+          <%= link_to technology.name, technology_path(technology.name) %>
+          &middot;
+          <small>
+            <%= technology.purpose %>
+            <%= link_to quadrant_path(technology.quadrant) do %>
+              <span class="label label-default">
+                <%= t("tech_radar.radar.quadrants.#{technology.quadrant}.title") %>
+              </span>
+            <% end %>
+          </small>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</section>
