@@ -169,6 +169,32 @@ TechRadar.warn_on_missing_why_summary = {
 TechRadar.warn_on_missing_why_summary = Hash.new(false)
 ```
 
+## Styling
+
+The radar's views use [Bootstrap](https://getbootstrap.com), for a few reasons:
+
+* We needed the default to look reasonably nice
+* Bootstrap is widely used and understood
+* Bootstrap can be brought in piecemeal alongside another framework, relatively easily
+
+Currently, you'll need only part of Bootstrap's styles to make things work.  If you are using the SASS version of bootstrap, you can
+bring in what you need like so:
+
+```sass
+@import "bootstrap-sprockets";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+@import "bootstrap/grid";
+@import "bootstrap/navs";
+@import "bootstrap/pagination";
+@import "bootstrap/labels";
+@import "bootstrap/alerts";
+@import "bootstrap/panels";
+```
+
+You can, of course, create your own views by accessing the `TechRadar::Radar` model directly.
+
 ## Licence
 
 *tech_radar* is released under the [MIT License](http://www.opensource.org/licenses/MIT).
