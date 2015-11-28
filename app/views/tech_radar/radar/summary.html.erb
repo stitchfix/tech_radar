@@ -14,15 +14,17 @@
       <div class="row">
         <% @radar.quadrants.each do |quadrant| %>
           <div class="col-md-3">
-            <% ring.technologies.select { |technology| technology.quadrant == quadrant.name }.each_with_index do |technology,i| %>
-              <% if i != 0 %>
-                &middot;
+            <p>
+              <% ring.technologies.select { |technology| technology.quadrant == quadrant.name }.each_with_index do |technology,i| %>
+                <% if i != 0 %>
+                  &middot;
+                <% end %>
+                <%= link_to technology.name, technology_path(technology.name) %> 
               <% end %>
-              <%= link_to technology.name, technology_path(technology.name) %> 
-            <% end %>
+            </p>
           </div>
         <% end %>
-      </article>
+      </div>
     </div>
-  </div>
+  </article>
 <% end %>

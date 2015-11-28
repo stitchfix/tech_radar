@@ -12,8 +12,8 @@ module TechRadar
       assert response.body =~ /FOOBAR/, "expected #{response.body} to include FOOBAR"
     end
 
-    test "the radar graph screen" do
-      get :graph
+    test "the radar summary screen" do
+      get :summary
       assert_response :success
     end
 

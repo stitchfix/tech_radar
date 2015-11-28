@@ -44,8 +44,9 @@ module TechRadar
     test "technology" do
       technology = @radar.technology("Ruby")
       assert_equal "Ruby"                          , technology.name
-      assert_equal "https://www.ruby-lang.org/en/" , technology.more_details_url.url
-      assert_equal nil                             , technology.why_url.url
+      assert_equal "https://www.ruby-lang.org/en/" , technology.more_details_url
+      assert_equal nil                             , technology.why_url
+      assert_equal nil                             , technology.why_summary
       assert_equal "Middleware Programming"        , technology.purpose
     end
 

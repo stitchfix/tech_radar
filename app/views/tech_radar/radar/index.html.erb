@@ -8,8 +8,10 @@
       <p class="lead">
         <%= t("tech_radar.radar.index.preamble") %>
       </p>
-      <%= link_to t("tech_radar.radar.index.summary_link"), radar_summary_path, class: "btn btn-primary" %>
-      <%= link_to t("tech_radar.radar.index.all_list_link"), technologies_path, class: "btn btn-default" %>
+      <p>
+        <%= link_to t("tech_radar.radar.index.summary_link"), radar_summary_path, class: "btn btn-primary" %>
+        <%= link_to t("tech_radar.radar.index.all_list_link"), technologies_path, class: "btn btn-default" %>
+      </p>
       <section>
         <h1 class="h2"><%= t("tech_radar.radar.index.howto.title") %></h1>
         <h2 class="h3"><%= t("tech_radar.radar.rings.name") %></h1>
