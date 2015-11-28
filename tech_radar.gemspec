@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = TechRadar::VERSION
   s.authors     = ["Stitch Fix Engineering", "Dave Copeland"]
   s.email       = ["eng@stitchfix.com", "davetron5000@gmail.com"]
-  s.homepage    = "http://opensource.stitchfix.com"
+  s.homepage    = "https://github.com/stitchfix/tech_radar"
   s.summary     = "Rails engine to create and manage your own team's Technology Radar"
   s.description = "Rails engine to create and manage your own team's Technology Radar"
   s.license     = "MIT"

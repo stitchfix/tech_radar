@@ -1,11 +1,13 @@
-# tech\_radar
+# tech\_radar [![Build Status](https://travis-ci.org/stitchfix/tech_radar.svg?branch=add_travis_yml)](https://travis-ci.org/stitchfix/tech_radar)
 
-This is a Rails engine for managing a [Tech Radar](https://www.thoughtworks.com/radar) for your team.  It allows you to identify the technology in use on your team, where it is in your level of adoption and other bits of metadata, such as whitepapers, blog posts, etc.
+> A Rails engine for managing a [Tech Radar](https://www.thoughtworks.com/radar) for your team.  
+
+It allows you to identify the technology in use on your team, where it is in your level of adoption and other bits of metadata, such as whitepapers, blog posts, etc.
 
 The Tech Radar is a way you can manage the use of technology on your team.  This tool makes it easier to do that, but you'll still need
 process and good communication to make the most of it.
 
-# Install and Setup
+## Install and Setup
 
 You'll need to do four things to get this working:
 
@@ -14,7 +16,7 @@ You'll need to do four things to get this working:
 3. Author your radar in the YAML file format
 4. Modify any text or copy in your localization file
 
-## Set up the engine
+### Set up the engine
 
 First, add to your `Gemfile`:
 
@@ -37,7 +39,7 @@ end
 The radar is now available at `/tech-radar` in your Rails app. If your main applicaiton layout uses any route helpers (e.g. for a nav),
 you'll need to change those. 
 
-## Fix References to Route Hlpers in Applicaiton Layout
+### Fix References to Route Helpers in Applicaiton Layout
 
 The engine will use your applicaiton layout, so if your layout uses any route helpers, they won't work when on the tech radar's views.
 To fix this, you must prepend `main_app.` to your routes.  
@@ -47,7 +49,7 @@ For example, if you have this:
 ```html
 <nav>
   <ul>
-    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Home",   root_path %></li>
     <li><%= link_to "Logout", signout_path %></li>
   </ul>
 </nav>
@@ -58,8 +60,10 @@ You'll change it to this:
 ```html
 <nav>
   <ul>
-    <li><%= link_to "Home", main_app.root_path %></li>
+    <li><%= link_to "Home",   main_app.root_path %></li>
+    <!--                      ^^^^^^^^ -->
     <li><%= link_to "Logout", main_app.signout_path %></li>
+    <!--                      ^^^^^^^^ -->
   </ul>
 </nav>
 ```
@@ -68,7 +72,7 @@ To create links to the radar's views, use `rake routes` to view them as you norm
 
 With this in place, you now should author your radar.
 
-## Authoring Your Radar
+### Authoring Your Radar
 
 The Radar is expected to be in `config/tech-radar.yml`.  You should start with this YAML file:
 
@@ -121,7 +125,7 @@ We'd recommend that, for your first pass, you document your current landscape, a
 With this set up, you can see the radar in your app.  All copy is controllers by localization, and you can override it in your app.  This
 is useful not just for translating the strings, but for customizing the messaging to your team.
 
-## Modify any text or copy in your localization file
+### Modify any text or copy in your localization file
 
 Examine the `config/en.yml` in this engine's source.  You can override any or all of those values for your team.  For example, the
 default summary of the _Adopt_ ring is as follows:
@@ -142,12 +146,12 @@ en:
 
 All the text in the engine can be customized in this way.
 
-# Configuration
+## Configuration
 
 To customize the configuration of this engine, create `config/initializers/tech_radar.rb`.  In there you can override any configuration
 options you need.
 
-## `warn_on_missing_why_summary`
+### `warn_on_missing_why_summary`
 
 If a technology is missing a `why_summary`, by defaut the engine's views will show a warning on that technology's page, urging you to
 provide a summary.  You may only want this warning for certain rings.  In that case, you can set `warn_on_missing_why_summary` to a hash,
@@ -165,4 +169,16 @@ TechRadar.warn_on_missing_why_summary = {
 TechRadar.warn_on_missing_why_summary = Hash.new(false)
 ```
 
+## Licence
 
+*tech_radar* is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+
+## Contributing
+
+*tech_radar* appreciates contributors!  Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+Everyone interacting in *tech_radar*'s codebase, issue trackers, chat rooms, and mailing lists is expected to follow the *tech_radar* [code of conduct](CODE_OF_CONDUCT.md).
+
+---
+
+Provided with :heart: by your friends at [Stitch Fix Engineering](http://multithreaded.stitchfix.com/)
