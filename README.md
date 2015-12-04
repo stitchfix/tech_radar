@@ -7,12 +7,21 @@ It allows you to identify the technology in use on your team, where it is in you
 The Tech Radar is a way you can manage the use of technology on your team.  This tool makes it easier to do that, but you'll still need
 process and good communication to make the most of it.
 
+## See It In Action
+
+* View [Stitch Fix's Tech Radar](http://tech-radar.stitchfix.com) to see how it looks on a mature team with a lot of software in production.
+* Try out the [example Rails app](https://github.com/stitchfix/example_tech_radar)
+* Deploy it to Heroku:
+
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/stitchfix/example_tech_radar)
+  
+
 ## Install and Setup
 
 You'll need to do four things to get this working:
 
 1. Set up the engine
-2. Fix any references to route helpers in your main applicaiton layout
+2. Fix any references to route helpers in your main application layout
 3. Author your radar in the YAML file format
 4. Modify any text or copy in your localization file
 
@@ -36,12 +45,12 @@ Rails.application.routes.draw do
 end
 ```
 
-The radar is now available at `/tech-radar` in your Rails app. If your main applicaiton layout uses any route helpers (e.g. for a nav),
+The radar is now available at `/tech-radar` in your Rails app. If your main application layout uses any route helpers (e.g. for a nav),
 you'll need to change those. 
 
-### Fix References to Route Helpers in Applicaiton Layout
+### Fix References to Route Helpers in Application Layout
 
-The engine will use your applicaiton layout, so if your layout uses any route helpers, they won't work when on the tech radar's views.
+The engine will use your application layout, so if your layout uses any route helpers, they won't work when on the tech radar's views.
 To fix this, you must prepend `main_app.` to your routes.  
 
 For example, if you have this:
