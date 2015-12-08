@@ -77,6 +77,7 @@
     Ruby:
       purpose: Middleware Programming
       more_details_url: https://www.ruby-lang.org/en/
+      more_details_summary: "Ruby is a dynamic, object-oriented programming language that combines ideas from Smalltalk, Perl, and others"
   "Trial":
     CoffeeScript:
       purpose: Browser Programming

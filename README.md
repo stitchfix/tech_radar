@@ -91,6 +91,7 @@ The Radar is expected to be in `config/tech-radar.yml`.  You should start with t
     "vi":
       purpose :"text editing"
       more_details_url: "http://vim.org"
+      more_details_summary: "Vim is mode-based text editor, based on vi that contains several enhancements"
       why_summary: "vi is a great text editor!"
       why_url: http://naildrivin5.com/blog/2013/04/24/how-to-switch-to-vim.html
   "Trial":
@@ -114,7 +115,7 @@ The Radar is expected to be in `config/tech-radar.yml`.  You should start with t
 ```
 
 Note that these keys are special.  If you are not using English, you can customize how these are displayed in your localization file, so
-don't translate or change these values.
+don't translate or change these values in `tech-radar.yml`.
 
 The top level are the _quadrants_ (e.g. “Techniques”).  These are used to partition your technologies by a rough type.  The next level
 down are _rings_ (e.g.“Adopt”).  These rings represent a level of adoption in your organization.
@@ -122,8 +123,8 @@ down are _rings_ (e.g.“Adopt”).  These rings represent a level of adoption i
 Inside each Ring should be a hash, which has the name of a technology as a key, and some metadata:
 
 * `purpose`: required, this is the explanation of what this technology is for.
-* `more_details_url`: optional, a link to explain in more detail what the technology is.  If omitted, the engine will show a link to a
-Google search for the technology.
+* `more_details_summary`: A brief summary of what this technology or technique is.  It can be as long as you want and will be shown in-line.
+* `more_details_url`: optional, a link to explain in more detail what the technology is.  If `more_details_summary` and this are omitted, the engine will show a link to a Google search for the technology.
 * `why_summary`: optional, but recommended, this explains why this technology is in the ring that it's in.  In particular, this is useful
 for technologies not in _Adopt_.
 * `why_url`: optional, this is a link to a white paper or other explanation about why the technology in in the ring that it's in.  This is
@@ -168,7 +169,7 @@ where each key is the ring name from the `config/tech-radar.yml` file, and the v
 shown when there is no `why_summary`.
 
 ```ruby
-For "Adopt" and "Trial", it's OK if the why_summary is missing
+# For "Adopt" and "Trial", it's OK if the why_summary is missing
 TechRadar.warn_on_missing_why_summary = {
   "Hold" => true,
   "Assess" => true,

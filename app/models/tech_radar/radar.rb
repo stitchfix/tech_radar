@@ -17,7 +17,14 @@ module TechRadar
       quadrant.each do |(ring,technologies)|
         by_ring[ring] ||= []
         (technologies || {}).each do |(name,data)|
-          by_ring[ring] << mk_technology(name,ring,quadrant_name,data)
+          by_ring[ring] << Technology.new(name: name,
+                                          ring: ring,
+                                          quadrant: quadrant_name,
+                                          purpose: data["purpose"],
+                                          more_details_url: data["more_details_url"],
+                                          more_details_summary: data["more_details_summary"],
+                                          why_url: data["why_url"],
+                                          why_summary: data["why_summary"])
         end
       end
       TechRadar::Quadrant.new(
@@ -44,19 +51,6 @@ module TechRadar
 
     def technology(name)
       technologies.detect { |technology| technology.name == name }
-    end
-
-  private
-
-    def mk_technology(name,ring,quadrant,data)
-      puts data.inspect if name == 'api_client'
-      Technology.new(name: name,
-                     ring: ring,
-                     quadrant: quadrant,
-                     more_details_url: data["more_details_url"],
-                     why_url: data["why_url"],
-                     purpose: data["purpose"],
-                     why_summary: data["why_summary"])
     end
 
   end

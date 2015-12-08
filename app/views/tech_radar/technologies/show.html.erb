@@ -8,11 +8,14 @@
   </h1>
   <p class="lead"><%= @technology.purpose %></p>
   <section>
-    <% if @technology.more_details_url.blank? %>
+    <% if @technology.more_details_url.blank? && @technology.more_details_summary.blank? %>
       <p>
         <%= link_to t("tech_radar.radar.technologies.more_details_url.google"), "https://www.google.com/search?q=#{@technology.name}", class: "btn btn-default" %>
       </p>
     <% else %>
+      <% if @technology.more_details_summary.present? %>
+        <p><%= @technology.more_details_summary %></p>
+      <% end %>
       <p>
         <%= link_to t("tech_radar.radar.technologies.more_details_url.link"), @technology.more_details_url, class: "btn btn-default" %>
       </p>
