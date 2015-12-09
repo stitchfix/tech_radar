@@ -22,5 +22,9 @@ module TechRadar
       technology.ring != 'Adopt' && technology.ring != 'Trial'
     end
 
+    def render_summary(summary_text)
+      TechRadar::Rendering.renderer.render_text(summary_text)
+    end
+
   end
 end

@@ -45,7 +45,7 @@ module TechRadar
       technology = @radar.technology("Ruby")
       assert_equal "Ruby"                          , technology.name
       assert_equal "https://www.ruby-lang.org/en/" , technology.more_details_url
-      assert_equal "Ruby is a dynamic, object-oriented programming language that combines ideas from Smalltalk, Perl, and others",
+      assert_equal "Ruby is a dynamic, _object-oriented_ programming language that combines ideas from Smalltalk, Perl, and others",
                    technology.more_details_summary
       assert_equal nil                             , technology.why_url
       assert_equal nil                             , technology.why_summary

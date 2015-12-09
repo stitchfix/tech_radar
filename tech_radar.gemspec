@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
   s.add_dependency "i18n"
   s.add_dependency "immutable-struct"
 
-  s.add_development_dependency "mocha"
+  s.add_development_dependency "redcarpet"
 end
