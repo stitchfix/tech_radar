@@ -4,6 +4,7 @@ module TechRadar
   class TechnologiesControllerTest < ActionController::TestCase
     setup do
       @routes = Engine.routes
+      TechRadar.summary_format = :markdown
     end
 
     test "index" do
@@ -46,7 +47,7 @@ module TechRadar
       assert_response :success
       assert response.body.include?("Ruby"),"Expected #{response.body} to include 'Ruby'"
       refute response.body.include?("Google"),"Expected #{response.body} NOT to include a link to a Google search"
-      assert response.body.include?("object-oriented"),"Expected #{response.body} to include Ruby's summary"
+      assert response.body.include?("<em>object-oriented</em>"),"Expected #{response.body} to include Ruby's summary, parsed as markdown"
     end
 
     test "show with more_details_url" do

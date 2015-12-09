@@ -14,7 +14,7 @@
       </p>
     <% else %>
       <% if @technology.more_details_summary.present? %>
-        <p><%= @technology.more_details_summary %></p>
+        <p class="text-muted"><%= render_summary(@technology.more_details_summary) %></p>
       <% end %>
       <p>
         <%= link_to t("tech_radar.radar.technologies.more_details_url.link"), @technology.more_details_url, class: "btn btn-default" %>
@@ -26,7 +26,7 @@
     <% if @technology.why_summary.present? %>
       <p>
         <span class="text-muted">
-          <%= @technology.why_summary %>
+          <%= render_summary(@technology.why_summary) %>
         </span>
         <% if @technology.why_url.present? %>
           <%= link_to t("tech_radar.radar.technologies.why_summary.link"), @technology.why_url %>
