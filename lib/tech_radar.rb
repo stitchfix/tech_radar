@@ -8,4 +8,8 @@ module TechRadar
   mattr_accessor :warn_on_missing_why_summary
 
   TechRadar.warn_on_missing_why_summary = Hash.new(true)
+
+  mattr_accessor :summary_format
+
+  TechRadar.summary_format = :plaintext
 end

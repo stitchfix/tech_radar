@@ -123,10 +123,11 @@ down are _rings_ (e.g.“Adopt”).  These rings represent a level of adoption i
 Inside each Ring should be a hash, which has the name of a technology as a key, and some metadata:
 
 * `purpose`: required, this is the explanation of what this technology is for.
-* `more_details_summary`: A brief summary of what this technology or technique is.  It can be as long as you want and will be shown in-line.
+* `more_details_summary`: A brief summary of what this technology or technique is.  It can be as long as you want and will be shown in-line.  This can be
+Markdown and will be rendered as such if you set `summary_format` to `:markdown` (see below).
 * `more_details_url`: optional, a link to explain in more detail what the technology is.  If `more_details_summary` and this are omitted, the engine will show a link to a Google search for the technology.
 * `why_summary`: optional, but recommended, this explains why this technology is in the ring that it's in.  In particular, this is useful
-for technologies not in _Adopt_.
+for technologies not in _Adopt_.  Markdown and will be rendered as such if you set `summary_format` to `:markdown` (see below).
 * `why_url`: optional, this is a link to a white paper or other explanation about why the technology in in the ring that it's in.  This is
 where you'd reference a detailed analysis or experience report with the technology.
 
@@ -163,7 +164,7 @@ options you need.
 
 ### `warn_on_missing_why_summary`
 
-If a technology is missing a `why_summary`, by defaut the engine's views will show a warning on that technology's page, urging you to
+If a technology is missing a `why_summary`, by default the engine's views will show a warning on that technology's page, urging you to
 provide a summary.  You may only want this warning for certain rings.  In that case, you can set `warn_on_missing_why_summary` to a hash,
 where each key is the ring name from the `config/tech-radar.yml` file, and the value is true or false, if a warning should be
 shown when there is no `why_summary`.
@@ -178,6 +179,17 @@ TechRadar.warn_on_missing_why_summary = {
 # Or, disable the warnings entirely
 TechRadar.warn_on_missing_why_summary = Hash.new(false)
 ```
+
+### `summary_format`
+
+This allows you to set the interpretation of the values for `why_summary` and `more_details_summary` in `tech-radar.yml`.  The main use of this is to use
+Markdown.
+
+Recognized values:
+
+* `:plaintext` (default)—render the text as-is, with no parsing or interpretation.
+* `:markdown`—render using Markdown, specifically by using the RedCarpet gem.  **This gem is not installed by default**.  You will need to include it in your
+app's `Gemfile`.  This is so that users who don't want Markdown don't have to install a Markdown gem.
 
 ## Styling
 
