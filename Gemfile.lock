@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tech_radar (0.2.0)
+    tech_radar (0.2.1)
       i18n
       immutable-struct
       rails (~> 4.2.5)
