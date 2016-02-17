@@ -215,6 +215,18 @@ bring in what you need like so:
 @import "bootstrap/panels";
 ```
 
+Also, each page is wrapped in a `section` with the css class `tech-radar`.  Specific pages' `section` elements also have a more
+specific CSS class:
+
+* `tech-radar-index` - main page
+* `tech-radar-summary` - summary page
+* `tech-radar-technologies` - A-Z page
+* `tech-radar-technology` - Single technology page
+* `tech-radar-quadrant` - Single quadrant page
+* `tech-radar-ring` - Single ring page
+
+If you aren't using Bootstrap, you can use these styles to alter however Bootstrap and your CSS framework are interacting.
+
 You can, of course, create your own views by accessing the `TechRadar::Radar` model directly.
 
 ## Licence

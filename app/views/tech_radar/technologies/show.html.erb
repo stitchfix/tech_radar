@@ -1,4 +1,4 @@
-<section>
+<section class="tech-radar tech-radar-technology">
   <h1>
     <%= @technology.name %>
     <small>
@@ -7,25 +7,29 @@
     </small>
   </h1>
   <p class="lead"><%= @technology.purpose %></p>
-  <section>
+  <section class="tech-radar-technology-summary">
     <% if @technology.more_details_url.blank? && @technology.more_details_summary.blank? %>
       <p>
         <%= link_to t("tech_radar.radar.technologies.more_details_url.google"), "https://www.google.com/search?q=#{@technology.name}", class: "btn btn-default" %>
       </p>
     <% else %>
       <% if @technology.more_details_summary.present? %>
-        <p class="text-muted"><%= render_summary(@technology.more_details_summary) %></p>
+        <p class="text-muted">
+          <%= render_summary(@technology.more_details_summary) %>
+        </p>
       <% end %>
-      <p>
-        <%= link_to t("tech_radar.radar.technologies.more_details_url.link"), @technology.more_details_url, class: "btn btn-default" %>
-      </p>
+      <% if @technology.more_details_url.present? %>
+        <p>
+          <%= link_to t("tech_radar.radar.technologies.more_details_url.link"), @technology.more_details_url, class: "btn btn-default" %>
+        </p>
+      <% end %>
     <% end %>
   </section>
   <section>
     <hr>
     <% if @technology.why_summary.present? %>
       <p>
-        <span class="text-muted">
+        <span class="text-muted tech-radar-technology-why-summary">
           <%= render_summary(@technology.why_summary) %>
         </span>
         <% if @technology.why_url.present? %>

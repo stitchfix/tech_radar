@@ -1,3 +1,4 @@
+<section class="tech-radar tech-radar-technologies">
 <h1 class="h2">A-Z</h1>
 <nav class="pagination">
   <% ('A'..'Z').each do |letter| %>
@@ -7,8 +8,8 @@
 <% @technologies.group_by { |technology| technology.name[0].upcase }.each do |letter,technologies| %>
   <a name="<%= letter %>"></a>
   <h2 class="h3"><%= letter %></h2>
+  <ul class="list-unstyled">
   <% technologies.each do |technology| %>
-    <ul class="list-unstyled">
       <li>
         <h1 class="h4">
           <%= link_to technology.name, technology_path(technology.name) %>
@@ -21,3 +22,4 @@
     <% end %>
   </ul>
 <% end %>
+</section>
