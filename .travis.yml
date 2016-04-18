@@ -1,10 +1,10 @@
 notifications:
   email:
     on_success: always
-script: 
+script:
   - 'bundle exec rake test'
 rvm:
+  - 2.3.0
   - 2.2.3
-  - 1.9.3
   - 2.1.6
   - ruby-head
