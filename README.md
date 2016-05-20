@@ -1,4 +1,4 @@
-# tech\_radar [![Build Status](https://travis-ci.org/stitchfix/tech_radar.svg?branch=add_travis_yml)](https://travis-ci.org/stitchfix/tech_radar)
+# tech\_radar [![Build Status](https://travis-ci.org/stitchfix/tech_radar.svg)](https://travis-ci.org/stitchfix/tech_radar)
 
 > A Rails engine for managing a [Tech Radar](https://www.thoughtworks.com/radar) for your team.  
 
