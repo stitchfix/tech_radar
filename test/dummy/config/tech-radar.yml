@@ -3,6 +3,9 @@
     Resque:
       purpose: "Background Jobs"
       more_details_url: https://github.com/resque/resque/tree/1-x-stable
+      tags:
+        - background jobs
+        - middleware
     RabbitMQ:
       purpose: "Messaging"
   "Trial":
@@ -36,6 +39,8 @@
     Heroku:
       purpose: "Infrastructure"
       more_details_url:
+      tags:
+        - middleware
   "Trial":
     iOS:
       purpose: "Mobile Application Development"
@@ -77,6 +82,17 @@
       purpose: Middleware Programming
       more_details_url: https://www.ruby-lang.org/en/
       more_details_summary: "Ruby is a dynamic, _object-oriented_ programming language that combines ideas from Smalltalk, Perl, and others"
+      tags:
+        - middleware
+        - scripting
+        - cli
+      examples:
+        - http://rubyonrails.org
+        - http://github.com/stitchfix/stitches
+      experts:
+        - Matz
+        - Tenderlove
+        - DHH
   "Trial":
     CoffeeScript:
       purpose: Browser Programming

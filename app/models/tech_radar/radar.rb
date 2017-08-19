@@ -24,6 +24,9 @@ module TechRadar
                                           more_details_url: data["more_details_url"],
                                           more_details_summary: data["more_details_summary"],
                                           why_url: data["why_url"],
+                                          tags: Array(data["tags"]).sort,
+                                          experts: Array(data["experts"]).sort,
+                                          examples: Array(data["examples"]).sort,
                                           why_summary: data["why_summary"])
         end
       end
@@ -45,8 +48,19 @@ module TechRadar
       rings.detect { |ring| ring.name == ring_name }
     end
 
-    def technologies
-      quadrants.map(&:rings).flatten.map(&:technologies).flatten.sort_by { |technology| technology.name.downcase }
+    def technologies(options = {})
+      results = quadrants.
+        map(&:rings).
+        flatten.
+        map(&:technologies).
+        flatten
+
+      if options[:tagged]
+        results = results.select { |technology|
+          technology.tags.include?(options[:tagged])
+        }
+      end
+      results.sort_by { |technology| technology.name.downcase }
     end
 
     def technology(name)
