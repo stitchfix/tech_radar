@@ -87,11 +87,13 @@
         - scripting
         - cli
       examples:
-        - http://rubyonrails.org
+        - url: http://rubyonrails.org
+          title: "Ruby on Rails Framework"
         - http://github.com/stitchfix/stitches
       experts:
         - Matz
-        - Tenderlove
+        - name: Tenderlove
+          email: tl@example.com
         - DHH
   "Trial":
     CoffeeScript:

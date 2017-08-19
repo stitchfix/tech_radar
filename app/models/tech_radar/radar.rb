@@ -17,6 +17,22 @@ module TechRadar
       quadrant.each do |(ring,technologies)|
         by_ring[ring] ||= []
         (technologies || {}).each do |(name,data)|
+          experts = Array(data["experts"]).map { |name_or_hash|
+            if name_or_hash.kind_of?(String)
+              Expert.new(name: name_or_hash)
+            else
+              Expert.new(name: name_or_hash.fetch("name"), email: name_or_hash["email"])
+            end
+          }.sort_by(&:name)
+
+          examples = Array(data["examples"]).map { |url_or_hash|
+            if url_or_hash.kind_of?(String)
+              Example.new(url: url_or_hash)
+            else
+              Example.new(url: url_or_hash.fetch("url"), title: url_or_hash["title"])
+            end
+          }.sort_by { |example| example.title.to_s }
+
           by_ring[ring] << Technology.new(name: name,
                                           ring: ring,
                                           quadrant: quadrant_name,
@@ -25,8 +41,8 @@ module TechRadar
                                           more_details_summary: data["more_details_summary"],
                                           why_url: data["why_url"],
                                           tags: Array(data["tags"]).sort,
-                                          experts: Array(data["experts"]).sort,
-                                          examples: Array(data["examples"]).sort,
+                                          experts: experts,
+                                          examples: examples,
                                           why_summary: data["why_summary"])
         end
       end

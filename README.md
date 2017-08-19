@@ -110,10 +110,12 @@ The Radar is expected to be in `config/tech-radar.yml`.  You should start with t
         - lifestyle
       experts:
         - Bram
-        - Drew Neil
+        - name: Drew Neil
+          email: drew@example.com
       examples:
         - http://vim.org
-        - http://neovim.io
+        - url: http://neovim.io
+          title: The next version of vim
   "Trial":
   "Assess":
   "Hold":
