@@ -105,6 +105,15 @@ The Radar is expected to be in `config/tech-radar.yml`.  You should start with t
       more_details_summary: "Vim is mode-based text editor, based on vi that contains several enhancements"
       why_summary: "vi is a great text editor!"
       why_url: http://naildrivin5.com/blog/2013/04/24/how-to-switch-to-vim.html
+      tags:
+        - editor
+        - lifestyle
+      experts:
+        - Bram
+        - Drew Neil
+      examples:
+        - http://vim.org
+        - http://neovim.io
   "Trial":
   "Assess":
   "Hold":
@@ -141,6 +150,10 @@ Markdown and will be rendered as such if you set `summary_format` to `:markdown`
 for technologies not in _Adopt_.  Markdown will be rendered as such if you set `summary_format` to `:markdown` (see below).
 * `why_url`: optional, this is a link to a white paper or other explanation about why the technology in in the ring that it's in.  This is
 where you'd reference a detailed analysis or experience report with the technology.
+* `tags`: this is a list of arbitrary tags you can use to make your radar more navigable.  **This is not used by the views in the engine**.
+* `experts`: A list of names of people on yoru team that are knowledgable about the technology and can be a resource for learning more.  **This is not used by the views in the engine**.
+* `examples`: A list of urls that exemplify the technology or technique.  These should be instructions, walkthroughs, rubooks, or
+anything to help someone understand how to use the technology or technique in your organization.  **This is not used by the views in the engine**.
 
 We'd recommend that, for your first pass, you document your current landscape, and not be too aspirational.
 
