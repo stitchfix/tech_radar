@@ -36,14 +36,14 @@ module TechRadar
     end
 
     test "show with no more_details_url or more_details_summary" do
-      get :show, id: "RabbitMQ"
+      get :show, params: { id: "RabbitMQ" }
       assert_response :success
       assert response.body.include?("RabbitMQ"),"Expected #{response.body} to include 'RabbitMQ'"
       assert response.body.include?("Google"),"Expected #{response.body} to include a link to a Google search"
     end
 
     test "show with no more_details_url but has a more_details_summary" do
-      get :show, id: "Ruby"
+      get :show, params: { id: "Ruby" }
       assert_response :success
       assert response.body.include?("Ruby"),"Expected #{response.body} to include 'Ruby'"
       refute response.body.include?("Google"),"Expected #{response.body} NOT to include a link to a Google search"
@@ -51,7 +51,7 @@ module TechRadar
     end
 
     test "show with more_details_url" do
-      get :show, id: "Resque"
+      get :show, params: { id: "Resque" }
       assert_response :success
       assert response.body.include?("Resque"),"Expected #{response.body} to include 'Resque'"
       refute response.body.include?("Google"),"Expected #{response.body} NOT to include a link to a Google search"

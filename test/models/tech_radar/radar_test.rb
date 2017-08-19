@@ -47,8 +47,8 @@ module TechRadar
       assert_equal "https://www.ruby-lang.org/en/" , technology.more_details_url
       assert_equal "Ruby is a dynamic, _object-oriented_ programming language that combines ideas from Smalltalk, Perl, and others",
                    technology.more_details_summary
-      assert_equal nil                             , technology.why_url
-      assert_equal nil                             , technology.why_summary
+      assert_nil technology.why_url
+      assert_nil technology.why_summary
       assert_equal "Middleware Programming"        , technology.purpose
     end
 
