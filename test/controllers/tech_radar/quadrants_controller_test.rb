@@ -7,7 +7,7 @@ module TechRadar
     end
 
     test "show" do
-      get :show, id: "Tools"
+      get :show, params: { id: "Tools" }
       assert_response :success
       assert response.body =~ /RabbitMQ.*Resque.*ElasticSearch.*HumbleKit.*Redis as a database.*Sidekiq.*JIRA.*SwiftTask/m,
         "Expected #{response.body} to contain all 'Tools' technologies, ordered by ring, then name"
