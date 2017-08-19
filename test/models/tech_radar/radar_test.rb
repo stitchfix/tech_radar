@@ -47,9 +47,18 @@ module TechRadar
       assert_equal "https://www.ruby-lang.org/en/"   , technology.more_details_url
       assert_equal "Middleware Programming"          , technology.purpose
       assert_equal ["cli", "middleware", "scripting"], technology.tags
-      assert_equal ["DHH", "Matz", "Tenderlove"]     , technology.experts
-      assert_equal ["http://github.com/stitchfix/stitches",
-                    "http://rubyonrails.org" ]       , technology.examples
+
+      assert_equal "DHH",            technology.experts[0].name
+      assert_nil                     technology.experts[0].email
+      assert_equal "Matz",           technology.experts[1].name
+      assert_nil                     technology.experts[1].email
+      assert_equal "Tenderlove",     technology.experts[2].name
+      assert_equal "tl@example.com", technology.experts[2].email
+
+      assert_equal "http://github.com/stitchfix/stitches", technology.examples[0].url
+      assert_nil                                           technology.examples[0].title
+      assert_equal "http://rubyonrails.org",               technology.examples[1].url
+      assert_equal "Ruby on Rails Framework",              technology.examples[1].title
 
       assert_nil technology.why_url
       assert_nil technology.why_summary
