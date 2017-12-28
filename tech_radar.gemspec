@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "redcarpet"
   s.add_development_dependency "sass"
+  s.add_development_dependency('rspec_junit_formatter')
 end
