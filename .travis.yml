@@ -6,9 +6,9 @@ notifications:
 script:
   - 'bundle exec rake test'
 rvm:
-  - 2.2.7
-  - 2.3.4
-  - 2.4.1
+  - 2.7.0
+  - 2.6.5
+  - 2.5.7
   - ruby-head
 matrix:
   allow_failures:
